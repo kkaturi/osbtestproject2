@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="HelloSBProject/WSDLs/HelloWorld"/>
+            <con:binding>
+                <con:name>execute_bind</con:name>
+                <con:namespace>http://xmlns.oracle.com/OSBApp/HelloSBProject/HelloWorld</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-a8df696.391bf646.0.17221298a8e.N7f37">
+            <con:stage id="_StageId-a8df696.391bf646.0.17221298a8e.N7f35" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-a8df696.391bf646.0.17221298a8e.N7f36">
+            <con:stage id="_StageId-a8df696.391bf646.0.17221298a8e.N7f34" name="Stage1">
+                <con:context>
+                    <con1:userNsDecl prefix="exam" namespace="http://www.example.org"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="body">
+                        <con1:id>_ActionId-a8df696.391bf646.0.17221298a8e.N7f01</con1:id>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<soap-env:Body>
+  <exam:HelloWorldResponse>
+    <exam:response>
+      {fn:concat("HI ",$body/exam:HelloWorldRequest/exam:request)}
+    </exam:response>
+  </exam:HelloWorldResponse>
+</soap-env:Body>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="Pipeline Pair Node1">
+                <con:request>request-a8df696.391bf646.0.17221298a8e.N7f37</con:request>
+                <con:response>response-a8df696.391bf646.0.17221298a8e.N7f36</con:response>
+            </con:pipeline-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
