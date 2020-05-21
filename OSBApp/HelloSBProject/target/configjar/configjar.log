@@ -1,0 +1,7 @@
+The system cannot find the path specified.
+The system cannot find the path specified.
+<May 21, 2020 9:01:35,990 PM IST> <Info> <oracle.osb.tools-configjar> <BEA-000000> <The temporary directory (D:\CAPG\Practice\GithubLocal\osbtestproject2\OSBApp\HelloSBProject\target\configjar\configfwk\osbinstance1590075095959\OSB11gConfig) has been created for the configuration framework data. This directory will not be automatically deleted.> 
+<May 21, 2020 9:01:36,325 PM IST> <Info> <oracle.osb.offline.kernel-offline.kerneloffline> <OSB-2030850> <Initializing ALSB in offline mode. Install dir: E:\OracleBPM12213\Middleware\Oracle_Home\osb config dir: D:\CAPG\Practice\GithubLocal\osbtestproject2\OSBApp\HelloSBProject\target\configjar\configfwk\osbinstance1590075095959\OSB11gConfig> 
+<May 21, 2020 9:01:49,309 PM IST> <Info> <oracle.osb.tools-configjar> <BEA-000000> <OSB offline instance has started.> 
+<May 21, 2020 9:01:50,410 PM IST> <Info> <oracle.osb.tools-configjar> <BEA-000000> <OSB Config Jar D:\CAPG\Practice\GithubLocal\osbtestproject2\OSBApp\HelloSBProject\target\sbconfig.sbar has been created successfully.> 
+<May 21, 2020 9:01:50,522 PM IST> <Info> <oracle.osb.tools-configjar> <BEA-000000> <Config Jar tool completed.> 
