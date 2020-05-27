@@ -12,6 +12,7 @@
     <modules>
         <module>System</module>
         <module>HelloSBProject</module>
+        <module>TestORDS</module>
     </modules>
 
 </project>
